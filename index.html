@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لعبة CSS Float</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .float-container {
+            background-color: #e0e0e0;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: left;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .box {
+            width: 150px;
+            height: 150px;
+            background-color: #4CAF50;
+            color: white;
+            line-height: 150px;
+            text-align: center;
+            margin: 10px;
+            display: inline-block;
+        }
+
+        .controls {
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin: 5px;
+            font-size: 14px;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: white;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        p {
+            margin: 20px 0;
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CSS Float</h1>
+        <p>اختر اتجاه الطفو (float) للصندوق لتشاهد كيفية ترتيب النصوص حوله داخل المربع.</p>
+        
+        <!-- مربع يحتوي على النص والصندوق -->
+        <div class="float-container">
+            <!-- الصندوق -->
+            <div class="box" id="box">صندوق</div>
+
+            <!-- النص المحيط -->
+            <p>هذا نص يحيط بالصندوق، ويمكنك مشاهدة كيفية التفاعل مع خاصية float. جرب تغيير اتجاه الطفو للصندوق لترى كيف يؤثر ذلك على تخطيط النص داخل هذا المربع.</p>
+        </div>
+
+        <!-- أزرار التحكم -->
+        <div class="controls">
+            <h3>اختر اتجاه الطفو:</h3>
+            <div>
+                <button onclick="floatBox('left')">طفو يسار</button>
+                <button onclick="floatBox('right')">طفو يمين</button>
+                <button onclick="clearFloat()">إزالة الطفو</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function floatBox(direction) {
+            const box = document.getElementById('box');
+            box.style.float = direction;
+        }
+
+        function clearFloat() {
+            const box = document.getElementById('box');
+            box.style.float = 'none';
+        }
+    </script>
+</body>
+</html>
